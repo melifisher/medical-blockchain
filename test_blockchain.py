@@ -3,7 +3,7 @@ import requests
 import json
 
 def test_medical_records():
-    BASE_URL = "http://136.248.112.224:8080"
+    BASE_URL = "http://localhost:8080"
     
     # Obtener cuentas de Ganache (asumiendo que son las primeras dos)
     from web3 import Web3
@@ -13,7 +13,7 @@ def test_medical_records():
     
     # admin_private_key = w3.eth.account.from_key(w3.geth.personal.list_wallets()[0]['privateKey']).privateKey.hex()
     # doctor_private_key = '0x89a1d4aeae91f63c68c80b026ca9f7813872e79'
-    doctor_private_key = '0xf836bc9d0a955396c3463b8ffab14dfd270740489954406cfadd35e73ea861c1'
+    doctor_private_key = '0xa51e1e04b0e4c7ab9d6277739868039e7ebb0e69c6c327182d978193e385653e'
 
     # 1. Autorizar nuevo doctor
     print("Autorizando doctor...")

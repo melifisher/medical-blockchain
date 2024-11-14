@@ -11,7 +11,7 @@ truffle compile
 truffle migrate
 //Despues de truffle migrate saldra el contract address para ponerlo en el .env
 
-pip install fastapi uvicorn web3 python-dotenv pydatic eth-account
+pip install fastapi uvicorn web3 python-dotenv pydantic eth-account
 
 //iniciar el servicio fastapi
 uvicorn blockchain_service:app --reload
