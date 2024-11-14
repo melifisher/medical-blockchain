@@ -5,7 +5,6 @@ import json
 import os
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from typing import Optional, Dict, Any 
 from hexbytes import HexBytes
 
 class BlockchainConfig:
@@ -22,7 +21,8 @@ class BlockchainConfig:
         CONTRACT_ABI = contract_data['abi']
         
     # La dirección del contrato se obtiene después del deployment
-    CONTRACT_ADDRESS = '0x2390B8154c79525ac65dC96a276B3235fE3c91Cf'
+    # CONTRACT_ADDRESS = '0x2390B8154c79525ac65dC96a276B3235fE3c91Cf'
+    CONTRACT_ADDRESS = '0x7acbD096b6b6f4f7b33F34ac3afC41e8918b75cA'
 
 class BlockchainService:
     def __init__(self):
