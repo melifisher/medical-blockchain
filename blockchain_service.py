@@ -6,11 +6,16 @@ import os
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from hexbytes import HexBytes
+from dotenv import load_dotenv
 
 class BlockchainConfig:
-    # Conexión a Ganache
-    WEB3_PROVIDER = "http://127.0.0.1:8545"
+    load_dotenv()
     
+    WEB3_PROVIDER = os.getenv('GANACHE_URL')
+    CONTRACT_ADDRESS = os.getenv('CONTRACT_ADDRESS')
+    
+    # CONTRACT_ADDRESS = '0x2390B8154c79525ac65dC96a276B3235fE3c91Cf'
+
     # Cargar ABI del contrato
     contract_path = os.path.join(
         os.path.dirname(__file__),
@@ -20,10 +25,7 @@ class BlockchainConfig:
         contract_data = json.load(f)
         CONTRACT_ABI = contract_data['abi']
         
-    # La dirección del contrato se obtiene después del deployment
-    # CONTRACT_ADDRESS = '0x2390B8154c79525ac65dC96a276B3235fE3c91Cf'
-    CONTRACT_ADDRESS = '0x7acbD096b6b6f4f7b33F34ac3afC41e8918b75cA'
-
+    
 class BlockchainService:
     def __init__(self):
         # Conectar a Ganache
